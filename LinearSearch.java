@@ -11,4 +11,13 @@ public class LinearSearch {
         }
         return arr;
     }
+        // Linear search: look one by one
+    private static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
