@@ -23,3 +23,17 @@ public class BubbleSortt {
             }
         }
     }
+        public static void main(String[] args) {
+        int[] sizes = {100, 500, 1000};
+        System.out.println("Algorithm: Bubble Sort");
+        System.out.println("Input Size | Time (ms)");
+        System.out.println("----------------------");
+        for (int size : sizes) {
+            int[] arr = generateArray(size);
+            long start = System.nanoTime();
+            bubbleSort(arr);
+            long end = System.nanoTime();
+            double timeMs = (end - start) / 1_000_000.0;
+            System.out.printf("%-10d | %.2f%n", size, timeMs);
+        }
+    }
