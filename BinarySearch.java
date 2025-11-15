@@ -23,3 +23,19 @@ private static int binarySearch(int[] arr, int target) {
         }
         return -1;
     }
+     public static void main(String[] args) {
+        int[] sizes = {100, 500, 1000};
+        System.out.println("Algorithm: Binary Search");
+        System.out.println("Input Size | Time (ms)");
+        System.out.println("----------------------");
+        for (int size : sizes) {
+            int[] arr = generateArray(size);
+            Arrays.sort(arr);  // Required before binary search
+            int target = arr[arr.length - 1];
+            long start = System.nanoTime();
+            binarySearch(arr, target);
+            long end = System.nanoTime();
+            double timeMs = (end - start) / 1_000_000.0;
+            System.out.printf("%-10d | %.2f%n", size, timeMs);
+        }
+    }
